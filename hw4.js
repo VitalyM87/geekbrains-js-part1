@@ -30,11 +30,9 @@ function hw4ex0(){ //пример из методички
 }
 
 function hw4ex1(){
-
-   console.log('Ответ задача 1');
-        
-   var max = 999;
-   var digit = {
+      
+   let max = 999;
+   let digit = {
      number: Math.round(Math.random() * max), /*запрос у пользователя +prompt('Введите число от 0 до 999'),*/
      units: 0,
      tens: 0,
