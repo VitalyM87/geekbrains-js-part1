@@ -23,7 +23,7 @@ function hw3ex1() {
       num++;
     }
   
-    console.log(arr);
+    alert(arr);
   }
   
 
@@ -34,7 +34,7 @@ function hw3ex1() {
       return sum + current
     });
   
-    console.log(result);
+    alert(result);
   
     //function countBasketPrice(array) {
     //let arrLength = array.length;
