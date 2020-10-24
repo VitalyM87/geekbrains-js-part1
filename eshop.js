@@ -8,6 +8,16 @@ class basketItem{
     }
 }
 
+//класс для корзины
+class basket{
+    constructor(totalPositions, totalCost, totalWeight){
+        this.totalPositions = totalPositions;
+        this.totalCost = totalCost;
+        this.totalWeight = totalWeight;
+    }
+}
+
+
 
 const item = [
     new basketItem(`Иммуностимулирующий`, 150, 300,), 
@@ -16,8 +26,8 @@ const item = [
     new basketItem(`Сердце Байкала`, 400, 450,),
 ]
 
-let totalCost = item.reduce(function(accum, item) {
+let totalPrice = item.reduce(function(accum, item) {
     return accum + item.itemCost;
 },0);
 
-console.log(totalCost);
+console.log(totalPrice);
