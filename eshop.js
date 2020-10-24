@@ -1,10 +1,17 @@
 //класс для товара
 
-class basketItem{
+class tea{
+    text = ''
     constructor(itemName, itemCost, itemWeight) {
        this.itemName = itemName;
        this.itemCost = itemCost;
        this.itemWeight = itemWeight;
+    }
+    render(){
+        const el = document.createElement('div')
+        el.innerHTML = this.text
+        const place = document.querySelector('#main')
+        place.appendChild(el)
     }
 }
 
@@ -17,17 +24,27 @@ class basket{
     }
 }
 
+const tea1 = new tea(`Иммуностимулирующий`, 150, 300,) ;
+const tea2 = new tea(`Антистрессовый`, 250, 300,) ;
+const tea3 = new tea(`Антиоксидант`, 350, 400,) ;
+const tea4 = new tea(`Сердце Байкала`, 400, 450,);
 
+// let totalPrice = items.reduce(function(accum, items) {
+//     return accum + items.itemCost;
+// },0);
 
-const item = [
-    new basketItem(`Иммуностимулирующий`, 150, 300,), 
-    new basketItem(`Антистрессовый`, 250, 300,), 
-    new basketItem(`Антиоксидант`, 350, 400,), 
-    new basketItem(`Сердце Байкала`, 400, 450,),
-]
+// console.log(totalPrice);
 
-let totalPrice = item.reduce(function(accum, item) {
-    return accum + item.itemCost;
-},0);
+window.onload = () => {
+    tea1.render();
+    tea2.render();
+    tea3.render();
+    tea4.render();
 
-console.log(totalPrice);
+}
+
+function onloadTest(){
+    console.log("Загрузка завершена");
+ } 
+
+ window.onload = onloadTest;

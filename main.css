@@ -142,3 +142,7 @@ body {
     margin: 1em;
   }
 }
+.main-links {
+  max-width: 900px;
+  margin: auto;
+}
