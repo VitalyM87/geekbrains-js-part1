@@ -1,19 +1,3 @@
-//класс для товара
-
-class tea{
-    text = ''
-    constructor(itemName, itemCost, itemWeight) {
-       this.itemName = itemName;
-       this.itemCost = itemCost;
-       this.itemWeight = itemWeight;
-    }
-    render(){
-        const el = document.createElement('div')
-        el.innerHTML = this.text
-        const place = document.querySelector('#main')
-        place.appendChild(el)
-    }
-}
 
 //класс для корзины
 class basket{
@@ -23,6 +7,32 @@ class basket{
         this.totalWeight = totalWeight;
     }
 }
+
+//класс для товара
+class tea{
+    text = ''
+    constructor(itemName, itemCost, itemWeight) {
+       this.itemName = itemName;
+       this.itemCost = itemCost;
+       this.itemWeight = itemWeight;
+    }
+    render(){
+        const el = document.createElement('div');
+        el.setAttribute("class", "link");
+        el.innerHTML = this.text = 'text';
+        const place = document.querySelector('#main');
+        place.appendChild(el);
+    }
+}
+
+
+//document.getElementById('addnew').onclick = function(){
+//    var parent = document.getElementById('parent'); 
+//    var newGroup = document.createElement("div"); 
+//    newGroup.setAttribute("id", "newGroup"); 
+//    newGroup.setAttribute("class", "inner");
+//    parent.appendChild(newGroup); 
+//};
 
 const tea1 = new tea(`Иммуностимулирующий`, 150, 300,) ;
 const tea2 = new tea(`Антистрессовый`, 250, 300,) ;
@@ -35,16 +45,16 @@ const tea4 = new tea(`Сердце Байкала`, 400, 450,);
 
 // console.log(totalPrice);
 
-window.onload = () => {
+function onLoadTeaRender(){
     tea1.render();
     tea2.render();
     tea3.render();
     tea4.render();
-
 }
+window.onload = onLoadTeaRender;
 
-function onloadTest(){
-    console.log("Загрузка завершена");
- } 
+//function onloadTest(){
+//    console.log("Загрузка завершена");
+// } 
 
- window.onload = onloadTest;
+// window.onload = onloadTest;
