@@ -10,19 +10,28 @@ class basket{
 
 //класс для товара
 class tea{
-    
     constructor(itemName, itemCost, itemWeight) {
        this.itemName = itemName;
        this.itemCost = itemCost;
        this.itemWeight = itemWeight;
     }
-    
+    createButton (){
+        const addToBasketButton = document.createElement('button');
+        addToBasketButton.classList.add('addToBasketButton');
+        addToBasketButton.innerHTML = 'В корзину';
+        addToBasketButton.addEventListener('click', this.onButtonClicked.bind(this));
+        return addToBasketButton;
+    }
+    onButtonClicked (){
+        console.log(this.itemName, this.itemCost)
+    }
     render(){
         const renderTea = document.createElement('div');
-        renderTea.setAttribute("class", "link");
+        renderTea.classList.add('link');
         renderTea.innerHTML = this.itemName;
         const place = document.querySelector('#main');
         place.appendChild(renderTea);
+        renderTea.appendChild(this.createButton());
     }
 }
 
@@ -45,13 +54,10 @@ const tea4 = new tea(`Сердце Байкала`, 400, 450,);
 
 // console.log(totalPrice);
 
-function onLoadTeaRender(){
-    tea1.render();
-    tea2.render();
-    tea3.render();
-    tea4.render();
-}
-window.onload = onLoadTeaRender;
+tea1.render();
+tea2.render();
+tea3.render();
+tea4.render();
 
 //function onloadTest(){
 //    console.log("Загрузка завершена");
