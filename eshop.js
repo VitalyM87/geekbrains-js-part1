@@ -10,21 +10,21 @@ class basket{
 
 //класс для товара
 class tea{
-    text = ''
+    
     constructor(itemName, itemCost, itemWeight) {
        this.itemName = itemName;
        this.itemCost = itemCost;
        this.itemWeight = itemWeight;
     }
+    
     render(){
-        const el = document.createElement('div');
-        el.setAttribute("class", "link");
-        el.innerHTML = this.text = 'text';
+        const renderTea = document.createElement('div');
+        renderTea.setAttribute("class", "link");
+        renderTea.innerHTML = this.itemName;
         const place = document.querySelector('#main');
-        place.appendChild(el);
+        place.appendChild(renderTea);
     }
 }
-
 
 //document.getElementById('addnew').onclick = function(){
 //    var parent = document.getElementById('parent'); 
