@@ -7,7 +7,6 @@ class basket{
         this.totalWeight = totalWeight;
     }
 }
-
 //класс для товара
 class tea{
     constructor(itemName, itemCost, itemWeight) {
@@ -15,46 +14,40 @@ class tea{
        this.itemCost = itemCost;
        this.itemWeight = itemWeight;
     }
-    createButton (){
+    render(){ //рендер товара в блок каталога
+        const renderTea = document.createElement('div');
+        renderTea.classList.add('teaContainer');
+        renderTea.innerHTML = this.itemName;
+        const place = document.querySelector('#main');
+        place.appendChild(renderTea);
+        renderTea.appendChild(this.addToBasketButton());
+    }
+    addToBasketButton (){ //добавляет товару кнопку "в корзину"
         const addToBasketButton = document.createElement('button');
         addToBasketButton.classList.add('addToBasketButton');
         addToBasketButton.innerHTML = 'В корзину';
         addToBasketButton.addEventListener('click', this.onButtonClicked.bind(this));
         return addToBasketButton;
     }
-    
-    render(){
-        const renderTea = document.createElement('div');
-        renderTea.classList.add('link');
-        renderTea.innerHTML = this.itemName;
-        const place = document.querySelector('#main');
-        place.appendChild(renderTea);
-        renderTea.appendChild(this.createButton());
-    }
-    onButtonClicked (){
+    onButtonClicked (){ //при нажатии на кнопу "в корзину" добавляет товар в корзину с кнопкой "удалить" из корзины
         const renderTeaInBasket = document.createElement('div');
-        renderTeaInBasket.classList.add('link');
+        renderTeaInBasket.classList.add('teaBasket');
         renderTeaInBasket.innerHTML = this.itemName;
         const place = document.querySelector('#basket');
         place.appendChild(renderTeaInBasket);
-        renderTeaInBasket.appendChild(this.removeFromBasketButton());  
+        renderTeaInBasket.appendChild(this.removeFromBasketButton.bind(this)());  
     }
-    onRemoveButtonClicked (){
-        const removeFromBasket = document.querySelector('.link');
-        removeFromBasket.parentNode.removeChild(removeFromBasket);
-     //   removeFromBasket.classList.add('link');
-     //   removeFromBasket.innerHTML = this.itemName;
-     //   const place = document.querySelector('#basket');
-     //   place.appendChild(removeFromBasket);
-     //   removeFromBasket.appendChild(this.removeFromBasketButton());  
-    }
-    //кнопка удаления из корзины
-    removeFromBasketButton() {
+    removeFromBasketButton() { //кнопка удаления из корзины
         const removeFromBasketButton = document.createElement('button');
         removeFromBasketButton.classList.add('removeFromBasketButton');
         removeFromBasketButton.innerHTML = 'Удалить';
         removeFromBasketButton.addEventListener('click', this.onRemoveButtonClicked.bind(this));
         return removeFromBasketButton;
+    }
+    onRemoveButtonClicked (){
+        const removeFromBasket = document.querySelector('.teaBasket');
+        removeFromBasket.remove();
+        //console.log(removeFromBasket);
     }
 }
 
