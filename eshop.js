@@ -22,9 +22,7 @@ class tea{
         addToBasketButton.addEventListener('click', this.onButtonClicked.bind(this));
         return addToBasketButton;
     }
-    onButtonClicked (){
-        console.log(this.itemName, this.itemCost)
-    }
+    
     render(){
         const renderTea = document.createElement('div');
         renderTea.classList.add('link');
@@ -33,15 +31,32 @@ class tea{
         place.appendChild(renderTea);
         renderTea.appendChild(this.createButton());
     }
+    onButtonClicked (){
+        const renderTeaInBasket = document.createElement('div');
+        renderTeaInBasket.classList.add('link');
+        renderTeaInBasket.innerHTML = this.itemName;
+        const place = document.querySelector('#basket');
+        place.appendChild(renderTeaInBasket);
+        renderTeaInBasket.appendChild(this.removeFromBasketButton());  
+    }
+    onRemoveButtonClicked (){
+        const removeFromBasket = document.querySelector('.link');
+        removeFromBasket.parentNode.removeChild(removeFromBasket);
+     //   removeFromBasket.classList.add('link');
+     //   removeFromBasket.innerHTML = this.itemName;
+     //   const place = document.querySelector('#basket');
+     //   place.appendChild(removeFromBasket);
+     //   removeFromBasket.appendChild(this.removeFromBasketButton());  
+    }
+    //кнопка удаления из корзины
+    removeFromBasketButton() {
+        const removeFromBasketButton = document.createElement('button');
+        removeFromBasketButton.classList.add('removeFromBasketButton');
+        removeFromBasketButton.innerHTML = 'Удалить';
+        removeFromBasketButton.addEventListener('click', this.onRemoveButtonClicked.bind(this));
+        return removeFromBasketButton;
+    }
 }
-
-//document.getElementById('addnew').onclick = function(){
-//    var parent = document.getElementById('parent'); 
-//    var newGroup = document.createElement("div"); 
-//    newGroup.setAttribute("id", "newGroup"); 
-//    newGroup.setAttribute("class", "inner");
-//    parent.appendChild(newGroup); 
-//};
 
 const tea1 = new tea(`Иммуностимулирующий`, 150, 300,) ;
 const tea2 = new tea(`Антистрессовый`, 250, 300,) ;
