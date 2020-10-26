@@ -41,13 +41,11 @@ class tea{
         const removeFromBasketButton = document.createElement('button');
         removeFromBasketButton.classList.add('removeFromBasketButton');
         removeFromBasketButton.innerHTML = 'Удалить';
-        removeFromBasketButton.addEventListener('click', this.onRemoveButtonClicked.bind(this));
+        removeFromBasketButton.addEventListener('click', this.onRemoveButtonClicked);
         return removeFromBasketButton;
     }
-    onRemoveButtonClicked (){
-        const removeFromBasket = document.querySelector('.teaBasket');
-        removeFromBasket.remove();
-        //console.log(removeFromBasket);
+    onRemoveButtonClicked () {
+        this.parentNode.remove();
     }
 }
 
