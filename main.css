@@ -15,6 +15,7 @@ body {
   background: #1abc9c;
   color: white;
 }
+
 .header a {
   color: white;
   text-align: center;
@@ -26,6 +27,7 @@ body {
   overflow: hidden;
   background-color: #333;
 }
+
 .header-nav a {
   float: left;
   color: white;
@@ -34,52 +36,66 @@ body {
   margin: 0;
   text-decoration: none;
 }
+
 .header-nav a:hover {
   background-color: #ddd;
   color: black;
   text-decoration: none;
 }
 
-/* Column container */
-.row {
-  display: -ms-flexbox;/* IE10 */
+/* Content */
+.main {
+  display: -ms-flexbox;
+  /* IE10 */
   display: flex;
-  -ms-flex-wrap: wrap;/* IE10 */
+  -ms-flex-wrap: wrap;
+  /* IE10 */
   flex-wrap: wrap;
 }
+
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
-.side {
-  -ms-flex: 30%;/* IE10 */
+.basket {
+  -ms-flex: 30%;
+  /* IE10 */
   flex: 30%;
   background-color: #f1f1f1;
   padding: 20px;
 }
 
 /* Main column */
-.main {
-  -ms-flex: 70%;/* IE10 */
+.itemsList {
+  -ms-flex: 70%;
+  /* IE10 */
   flex: 70%;
+  -ms-flex-wrap: wrap;
+  /* IE10 */
+  flex-wrap: wrap;
+
   background-color: white;
   padding: 20px;
-  display: block;
-  -ms-flex-wrap: wrap;/* IE10 */
-  flex-wrap: wrap;
+  display: flex;
+
+  max-width: 900px;
+  margin: auto;
 }
 
 /*стили товара в каталоге*/
-.teaContainer {
+.itemContainer {
   max-width: 250px;
   max-height: 500px;
   border-width: 1px;
   border-collapse: inherit;
-  border-style:solid;
+  border-style: solid;
   margin: 1em;
+  display: block;
 }
-.teaContainer-text {
+
+.itemContainer-text {
   margin: 1em 2em;
 }
-.teaContainer-screenshot {
+
+.itemContainer-screenshot {
   margin: 0;
   padding: 0;
   max-width: 248px;
@@ -87,18 +103,20 @@ body {
 }
 
 /*стили товара в корзине*/
-.teaBasket {
+.itemInBasket {
   max-width: 250px;
   max-height: 500px;
   border-width: 1px;
   border-collapse: inherit;
-  border-style:solid;
+  border-style: solid;
   margin: 1em;
 }
-.teaBasket-text {
+
+.itemInBasket-text {
   margin: 1em 2em;
 }
-.teaBasket-screenshot {
+
+.itemInBasket-screenshot {
   margin: 0;
   padding: 0;
   max-width: 248px;
@@ -113,33 +131,14 @@ body {
   background: #ddd;
 }
 
-.alg-img {
-  max-width: 100%;
-}
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .row {
+/* Responsive layout - when the screen is less than 640px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 640px) {
+  .main {
     flex-direction: column;
   }
 
-#wrapedTextIntro, #wrapedText {
-  display: none;
-}
-.header-nav {
-  display: flex;
+  .header-nav {
+    display: flex;
     flex-direction: column;
-}
-
-  .link-h2 {
-    display: auto;
-    margin: 1em;
-    min-height: auto;
   }
-  .link-text  {
-    margin: 1em;
-  }
-}
-.main-links {
-  max-width: 900px;
-  margin: auto;
 }
