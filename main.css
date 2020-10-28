@@ -88,7 +88,8 @@ body {
   border-collapse: inherit;
   border-style: solid;
   margin: 1em;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .itemContainer-text {
