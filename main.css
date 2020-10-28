@@ -22,17 +22,11 @@ body {
   text-decoration: underline;
 }
 
-/* Increase the font size of the heading
-.header h1 {
-  font-size: 40px;
-}*/
-
 /* header nav */
 .header-nav {
   overflow: hidden;
   background-color: #333;
 }
-
 
 .header-nav a {
   float: left;
@@ -49,9 +43,8 @@ body {
   text-decoration: none;
 }
 
-
-/* Column container */
-.row {
+/* Content */
+.main {
   display: -ms-flexbox;
   /* IE10 */
   display: flex;
@@ -62,46 +55,68 @@ body {
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
-.side {
+.basket {
   -ms-flex: 30%;
   /* IE10 */
   flex: 30%;
   background-color: #f1f1f1;
   padding: 20px;
-  font-size: 0.8em;
 }
 
 /* Main column */
-.main {
+.itemsList {
   -ms-flex: 70%;
   /* IE10 */
   flex: 70%;
-  background-color: white;
-  padding: 20px;
-  display: flex;
   -ms-flex-wrap: wrap;
   /* IE10 */
   flex-wrap: wrap;
+
+  background-color: white;
+  padding: 20px;
+  display: flex;
+
+  max-width: 900px;
+  margin: auto;
 }
 
-.link-h2 {
-  display: inline-block;
-  margin: 0 2em;
-  min-height: 3em;
-}
-
-.link {
+/*стили товара в каталоге*/
+.itemContainer {
   max-width: 250px;
   max-height: 500px;
   border-width: 1px;
   border-collapse: inherit;
-  border-style:solid;
+  border-style: solid;
   margin: 1em;
+  display: block;
 }
-.link-text {
+
+.itemContainer-text {
   margin: 1em 2em;
 }
-.link-screenshot {
+
+.itemContainer-screenshot {
+  margin: 0;
+  padding: 0;
+  max-width: 248px;
+  opacity: 0.6;
+}
+
+/*стили товара в корзине*/
+.itemInBasket {
+  max-width: 250px;
+  max-height: 500px;
+  border-width: 1px;
+  border-collapse: inherit;
+  border-style: solid;
+  margin: 1em;
+}
+
+.itemInBasket-text {
+  margin: 1em 2em;
+}
+
+.itemInBasket-screenshot {
   margin: 0;
   padding: 0;
   max-width: 248px;
@@ -116,29 +131,14 @@ body {
   background: #ddd;
 }
 
-.alg-img {
-  max-width: 100%;
-}
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .row {
+/* Responsive layout - when the screen is less than 640px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 640px) {
+  .main {
     flex-direction: column;
   }
 
-#wrapedTextIntro, #wrapedText {
-  display: none;
-}
-.header-nav {
-  display: flex;
+  .header-nav {
+    display: flex;
     flex-direction: column;
-}
-
-  .link-h2 {
-    display: auto;
-    margin: 1em;
-    min-height: auto;
-  }
-  .link-text  {
-    margin: 1em;
   }
 }
