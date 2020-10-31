@@ -1,31 +1,78 @@
 class items {
-    constructor(itemName, itemCost, itemWeight) {
-        this.itemName = itemName;
-        this.itemCost = itemCost;
-        this.itemWeight = itemWeight;
+    itemName = ''
+    itemCost = 0
+    itemImg = ''
+    itemCount = 0
+
+    constructor(itemName, itemCost) {
+        this.itemName = itemName
+        this.itemCost = itemCost
     }
-    renderItem() { //рендер товара в блок каталога
-        const renderItem = document.createElement('div');
-        renderItem.classList.add('itemContainer');
-        renderItem.innerHTML = 'Чай '+this.itemName+', стоимость '+this.itemCost;
-        document.querySelector('.itemsList').appendChild(renderItem);
-        renderItem.appendChild(this.addToBasketButton());
+    renderItemInList() { //рендер товара в блок каталога
+        const renderItem = document.createElement('div')
+        renderItem.classList.add('itemContainer')
+        renderItem.innerHTML = `<div>Чай ${this.itemName}, стоимость ${this.itemCost}</div>`
+        //    document.querySelector('.itemsList').appendChild(renderItem)
+        //    renderItem.appendChild(this.addToBasketButton())
+        return renderItem
     }
-    addToBasketButton() { //добавляет товару кнопку "в корзину"
-        const addToBasketButton = document.createElement('button');
-        addToBasketButton.classList.add('addToBasketButton');
-        addToBasketButton.innerHTML = 'В корзину';
-    //    addToBasketButton.addEventListener('click', this.onButtonClicked.bind(this));
-        return addToBasketButton;
+    //addToCartButton() { //добавляет товару кнопку "в корзину"
+    //    const addToCartButton = document.createElement('button')
+    //    addToCartButton.classList.add('addToCartButton')
+    //    addToCartButton.innerHTML = 'В корзину'
+    //    addToCartButton.addEventListener('click', this.onButtonClicked.bind(this));
+    //    return addToCartButton
+    //}
+}
+
+class List {
+    itemsArr = []
+
+    constructor(itemsArr = []) {
+        this.itemsArr = itemsArr
+    }
+
+    add(item) {
+        this.itemsArr.push(item)
     }
 }
 
-const tea1 = new items(`Иммуностимулирующий`, 150, 300, );
-const tea2 = new items(`Антистрессовый`, 250, 300, );
-const tea3 = new items(`Антиоксидант`, 350, 400, );
-const tea4 = new items(`Сердце Байкала`, 400, 450, );
+class Cart extends List {
 
-tea1.renderItem();
-tea2.renderItem();
-tea3.renderItem();
-tea4.renderItem();
+}
+
+class itemsList extends List {
+    constructor(itemsArr) {
+        super(itemsArr)
+    }
+
+    render () {
+        const placeToRender = document.querySelector('.itemsList')
+        if (!placeToRender) {
+            return
+        }
+
+        this.itemsArr.forEach(item => {
+            const itemTemplate = item.renderItemInList()
+            placeToRender.appendChild(itemTemplate)
+        })
+    }
+}
+
+
+const tea1 = new items(`Иммуностимулирующий`, 150)
+const tea2 = new items(`Антистрессовый`, 250, 300)
+const tea3 = new items(`Антиоксидант`, 350, 400)
+const tea4 = new items(`Сердце Байкала`, 400, 450)
+
+const itemsListInstance = new itemsList()
+itemsListInstance.add(tea1)
+itemsListInstance.add(tea2)
+itemsListInstance.add(tea3)
+itemsListInstance.add(tea4)
+itemsListInstance.render()
+
+//tea1.renderItemInList()
+//tea2.renderItemInList()
+//tea3.renderItemInList()
+//tea4.renderItemInList()
