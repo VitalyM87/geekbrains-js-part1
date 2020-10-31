@@ -55,7 +55,7 @@ body {
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
-.basket {
+.cart {
   -ms-flex: 30%;
   /* IE10 */
   flex: 30%;
@@ -88,15 +88,16 @@ body {
   border-collapse: inherit;
   border-style: solid;
   margin: 1em;
+  padding: 1em;
   display: flex;
-  flex-direction: column;
+  /*flex-direction: column;*/
 }
 
-.itemContainer-text {
-  margin: 1em 2em;
+.itemContent {
+  /*margin: 1em 2em;*/
 }
 
-.itemContainer-screenshot {
+.itemImg {
   margin: 0;
   padding: 0;
   max-width: 248px;

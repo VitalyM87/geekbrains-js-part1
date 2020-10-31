@@ -9,11 +9,18 @@ class items {
         this.itemCost = itemCost
     }
     renderItemInList() { //рендер товара в блок каталога
+        const {itemName, itemCost, itemImg} = this
+        
         const renderItem = document.createElement('div')
         renderItem.classList.add('itemContainer')
-        renderItem.innerHTML = `<div>Чай ${this.itemName}, стоимость ${this.itemCost}</div>`
-        //    document.querySelector('.itemsList').appendChild(renderItem)
-        //    renderItem.appendChild(this.addToBasketButton())
+        renderItem.innerHTML = `
+        <div>
+            <div class="itemImg">
+                <img src="${itemImg}" />
+            </div>
+            <div class="itemContent">Чай <span>${itemName}</span></div>
+            <div class="itemContent">Соимость: <span>${itemCost}</span> рублей</div>
+        </div>`
         return renderItem
     }
     //addToCartButton() { //добавляет товару кнопку "в корзину"
