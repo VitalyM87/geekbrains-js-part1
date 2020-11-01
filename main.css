@@ -61,6 +61,8 @@ body {
   flex: 30%;
   background-color: #f1f1f1;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Main column */
@@ -82,7 +84,7 @@ body {
 
 /*стили товара в каталоге*/
 .itemContainer {
-  max-width: 250px;
+  width: 250px;
   max-height: 500px;
   border-width: 1px;
   border-collapse: inherit;
@@ -90,7 +92,7 @@ body {
   margin: 1em;
   padding: 1em;
   display: flex;
-  /*flex-direction: column;*/
+  flex-direction: column;
 }
 
 .itemContent {
@@ -105,7 +107,7 @@ body {
 }
 
 /*стили товара в корзине*/
-.itemInBasket {
+.cart__list {
   max-width: 250px;
   max-height: 500px;
   border-width: 1px;
