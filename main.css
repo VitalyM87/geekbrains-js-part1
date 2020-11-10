@@ -95,16 +95,16 @@ main {
   flex-direction: column;
 }
 
-.itemContent {
-  /*margin: 1em 2em;*/
-}
-
 .good__image {
   margin: 0;
   padding: 0;
-  max-width: 248px;
-  max-height: 500px;
+  /*max-width: 200px;*/
+  max-height: 250px;
   opacity: 0.8;
+}
+
+.good__meta {
+  min-height: 3em;
 }
 
 /*стили товара в корзине*/
@@ -117,16 +117,6 @@ main {
   margin: 1em;
 }
 
-.itemInBasket-text {
-  margin: 1em 2em;
-}
-
-.itemInBasket-screenshot {
-  margin: 0;
-  padding: 0;
-  max-width: 248px;
-  opacity: 0.6;
-}
 
 /* Footer */
 .footer {
@@ -138,8 +128,8 @@ main {
 
 /* Responsive layout - when the screen is less than 640px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 640px) {
-  .main {
-    flex-direction: column;
+  main {
+    flex-direction: column-reverse;
   }
 
   .header-nav {

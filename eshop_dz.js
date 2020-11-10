@@ -4,9 +4,10 @@ class GoodItem {
     img = ''
     count = 1
 
-    constructor(name, price) {
+    constructor(name, price, img) {
         this.name = name
         this.price = price
+        this.img = img
     }
 
     inc() {
@@ -41,9 +42,9 @@ class GoodItem {
         wrapper.classList.add('good')
         wrapper.innerHTML = `
         <div>
-            <img class="good__image" src="irkutsk.jpeg" />
-          <div class="good__meta">Чай: <span>${name}</span></div>
-          <div class="good__meta">Цена: <span>${price}</span></div>
+            <img class="good__image" src="${img}" />
+            <div class="good__meta">Чай: <span>${name}</span></div>
+            <div class="good__meta">Цена: <span>${price}</span></div>
         </div>
       `
 
@@ -236,16 +237,23 @@ class GoodsList extends List {
     }
 }
 
-const Good1 = new GoodItem(`Здоровье с берегов Байкала (сувенирная коробка)`, 250)
-const Good2 = new GoodItem(`Иркутск (сувенирная коробка)`, 250)
-const Good3 = new GoodItem(`Мелодия Байкала (сувенирная коробка)`, 250)
-const Good4 = new GoodItem(`Тайны Ольхона (сувенирная коробка)`, 250)
+const Good1 = new GoodItem(`Здоровье с берегов Байкала`, 250, `img/zdorovie.jpeg`)
+const Good2 = new GoodItem(`Чабрец`, 120, `img/chabrets.jpeg`)
+const Good3 = new GoodItem(`Дар Тайги`, 250, `img/dar_taigi.jpeg`)
+const Good4 = new GoodItem(`Тайны Ольхона`, 250, `img/taini_olhona.jpeg`)
+const Good5 = new GoodItem(`Антистресс`, 250, `img/antistress.jpeg`)
+const Good6 = new GoodItem(`Иммуностимулирующий`, 250, `img/immuno.jpeg`)
+const Good7 = new GoodItem(`Саган-Дайля`, 120, `img/sagan_dailya.jpeg`)
+
 
 const GoodsListInstance = new GoodsList()
 GoodsListInstance.add(Good1)
 GoodsListInstance.add(Good2)
 GoodsListInstance.add(Good3)
 GoodsListInstance.add(Good4)
+GoodsListInstance.add(Good5)
+GoodsListInstance.add(Good6)
+GoodsListInstance.add(Good7)
 GoodsListInstance.render()
 
 const CartInstance = new Cart()
