@@ -78,17 +78,17 @@ main {
   padding: 20px;
   display: flex;
 
-  max-width: 900px;
+  /*max-width: 900px;*/
   margin: auto;
 }
 
 /*стили товара в каталоге*/
 .good {
   width: 250px;
-  max-height: 500px;
+  /*max-height: 500px;
   border-width: 1px;
   border-collapse: inherit;
-  border-style: solid;
+  border-style: solid;*/
   margin: 1em;
   padding: 1em;
   display: flex;
@@ -99,20 +99,21 @@ main {
   /*margin: 1em 2em;*/
 }
 
-.itemImg {
+.good__image {
   margin: 0;
   padding: 0;
   max-width: 248px;
-  opacity: 0.6;
+  max-height: 500px;
+  opacity: 0.8;
 }
 
 /*стили товара в корзине*/
 .cart__list {
   max-width: 250px;
   max-height: 500px;
-  border-width: 1px;
+  /*border-width: 1px;
   border-collapse: inherit;
-  border-style: solid;
+  border-style: solid;*/
   margin: 1em;
 }
 
