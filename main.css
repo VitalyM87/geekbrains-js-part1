@@ -9,7 +9,7 @@ body {
 }
 
 /* Header/logo Title */
-.header {
+.logo {
   padding: 40px;
   text-align: center;
   background: #1abc9c;
@@ -44,7 +44,7 @@ body {
 }
 
 /* Content */
-.main {
+main {
   display: -ms-flexbox;
   /* IE10 */
   display: flex;
@@ -66,7 +66,7 @@ body {
 }
 
 /* Main column */
-.itemsList {
+.goods-list {
   -ms-flex: 70%;
   /* IE10 */
   flex: 70%;
@@ -83,7 +83,7 @@ body {
 }
 
 /*стили товара в каталоге*/
-.itemContainer {
+.good {
   width: 250px;
   max-height: 500px;
   border-width: 1px;

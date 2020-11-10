@@ -89,7 +89,7 @@ class Cart extends List {
         //block.appendChild(button)
         block.appendChild(list)
 
-        const placeToRender = document.querySelector('.cart')
+        const placeToRender = document.querySelector('.cart__list')
         if (placeToRender) {
             placeToRender.appendChild(block)
         }
@@ -100,10 +100,10 @@ class Cart extends List {
             return
         }
 
-        //this.itemsArr.forEach(item => {
-        //    const itemTemplate = item.renderItemInList()
-        //    placeToRender.appendChild(itemTemplate)
-        //})
+        this.itemsArr.forEach(item => {
+            const itemTemplate = item.renderItemInList()
+            placeToRender.appendChild(itemTemplate)
+        })
     }
 
 
