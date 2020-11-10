@@ -40,7 +40,7 @@ class GoodItem {
           <div class="good__image">
             <img src="${img}" />
           </div>
-          <div class="good__meta">Товар: <span>${name}</span></div>
+          <div class="good__meta">Чай: <span>${name}</span></div>
           <div class="good__meta">Цена: <span>${price}</span></div>
         </div>
       `
@@ -231,14 +231,16 @@ class GoodItem {
     }
   }
   
-  const Good1 = new GoodItem('1', 1)
-  const Good2 = new GoodItem('2', 2)
-  const Good3 = new GoodItem('3', 3)
+  const Good1 = new GoodItem(`Иммуностимулирующий`, 150)
+  const Good2 = new GoodItem(`Антистрессовый`, 250)
+  const Good3 = new GoodItem(`Антиоксидант`, 350)
+  const Good4 = new GoodItem(`Сердце Байкала`, 400)
   
   const GoodsListInstance = new GoodsList()
   GoodsListInstance.add(Good1)
   GoodsListInstance.add(Good2)
   GoodsListInstance.add(Good3)
+  GoodsListInstance.add(Good4)
   GoodsListInstance.render()
   
   const CartInstance = new Cart()
